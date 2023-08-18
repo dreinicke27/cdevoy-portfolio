@@ -30,7 +30,7 @@ const Home = () => {
                 <div className="col-10 col-md-8 col-lg-6 py-md-5">
                     <h1 className="display-5 fw-bold text-light">Experience Design Made Simple</h1>
                     <div class="gap-3 d-flex pt-md-5">
-                        <button type="button" className="btn btn-light px-4 rounded-lg">LET'S WORK TOGETHER</button>
+                        <button type="button" className="btn btn-light px-4 rounded-lg" data-bs-toggle="modal" data-bs-target="#calendlyModal">LET'S WORK TOGETHER</button>
                         <a href="#about"><button type="button" className="btn btn-outline-light px-4 rounded-lg">ABOUT ME</button></a>
                     </div>
                 </div>
@@ -107,7 +107,33 @@ const Home = () => {
             </div>    
             </div>
         </section>
+
+        <div className="modal fade" id="calendlyModal" tabindex="-1" aria-labelledby="calendlyModalLabel" aria-hidden="true">
+            <div className="modal-dialog">
+                <div className="modal-content">
+                <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="calendlyModalLabel">Let's Work Together</h1>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div className="modal-body">
+                    <div className="row justify-content-evenly">
+                        <div className="col-4">
+                            <a className="btn btn-dark" href="#about" role="button">Calendly 1</a>
+                        </div>
+                        <div className="col-4">
+                            <a className="btn btn-dark" href="#about" role="button">Calendly 2</a>
+                        </div>
+                    </div>
+                </div>
+                <div className="modal-footer">
+                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+
     );
 }
 
