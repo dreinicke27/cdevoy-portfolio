@@ -21,6 +21,9 @@ const Home = () => {
         setAbout(!about);
     };
 
+
+
+
     return (
     <div>
         <div>
@@ -72,28 +75,28 @@ const Home = () => {
         <section className="container pb-5 text-center">
             <h2 className="mx-auto text-secondary">Some orgs I'm proud to have worked with</h2>
             <div className="row py-5">
-                <div class="col-lg-3 col-sm-6 col-xs-12 py-3">
+                <div className="col-lg-3 col-sm-6 col-xs-12 py-3">
                     <img src={stanford} className="thumbnail img-responsive" alt="stanford"/>
                 </div>
-                <div class="col-lg-3 col-sm-6 col-xs-12 py-3">
+                <div className="col-lg-3 col-sm-6 col-xs-12 py-3">
                     <img src={cs} className="thumbnail img-responsive" alt="credit suisse"/>
                 </div>
-                <div class="col-lg-3 col-sm-6 col-xs-12 py-3">
+                <div className="col-lg-3 col-sm-6 col-xs-12 py-3">
                     <img src={cc} className="thumbnail img-responsive" alt="cc"/>
                 </div>
-                <div class="col-lg-3 col-sm-6 col-xs-12 py-3">
+                <div className="col-lg-3 col-sm-6 col-xs-12 py-3">
                     <img src={aer} className="thumbnail img-responsive" alt="aer"/>
                 </div>
-                <div class="col-lg-3 col-sm-6 col-xs-12 py-3">
+                <div className="col-lg-3 col-sm-6 col-xs-12 py-3">
                     <img src={bcbs} className="thumbnail img-responsive" alt="blue cross blue shield"/>
                 </div>
-                <div class="col-lg-3 col-sm-6 col-xs-12 py-3">
+                <div className="col-lg-3 col-sm-6 col-xs-12 py-3">
                     <img src={berkeley} className="thumbnail img-responsive" alt="berkeley"/>
                 </div>
-                <div class="col-lg-3 col-sm-6 col-xs-12 py-3">
+                <div className="col-lg-3 col-sm-6 col-xs-12 py-3">
                     <img src={bmo} className="thumbnail img-responsive" alt="bmo"/>
                 </div>
-                <div class="col-lg-3 col-sm-6 col-xs-12 py-3">
+                <div className="col-lg-3 col-sm-6 col-xs-12 py-3">
                     <img src={commbank} className="thumbnail img-responsive" alt="comm bank"/>
                 </div>
             </div>
@@ -109,24 +112,114 @@ const Home = () => {
         </section>
 
         <div className="modal fade" id="calendlyModal" tabindex="-1" aria-labelledby="calendlyModalLabel" aria-hidden="true">
-            <div className="modal-dialog">
+            <div className="modal-dialog modal-lg">
                 <div className="modal-content">
                 <div className="modal-header">
                     <h1 className="modal-title fs-5" id="calendlyModalLabel">Let's Work Together</h1>
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div className="modal-body">
-                    <div className="row justify-content-evenly">
-                        <div className="col-4">
-                            <a className="btn btn-dark" href="#about" role="button">Calendly 1</a>
-                        </div>
-                        <div className="col-4">
-                            <a className="btn btn-dark" href="#about" role="button">Calendly 2</a>
+                    <div className="modal-split">
+                        <div className="row justify-content-evenly">
+                            <div className="col-3 border border-dark-subtle text-center p-3">
+                                <h4>Book Me!</h4>
+                                <p className="pb-3">Lorem ipsum is made up text to be used as a placeholder. It helps to see approximately the length of text that will be appropriate.</p>
+                                <ul>
+                                    <li><span className="closeList">reason one</span></li>
+                                    <li><span className="closeList">reason two</span></li>
+                                    <li><span className="closeList">reason three</span></li>
+                                </ul>
+                                <a className="btn btn-dark" href="https://www.calendly.com/" target="_blank" rel="noreferrer" role="button">Book</a>
+                            </div>
+                            <div className="col-3 border border-dark-subtle text-center p-3">
+                                <h4>Book Me!</h4>
+                                <p className="pb-3">Lorem ipsum is made up text to be used as a placeholder. It helps to see approximately the length of text that will be appropriate.</p>
+                                <ul>
+                                    <li><span className="closeList">reason one</span></li>
+                                    <li><span className="closeList">reason two</span></li>
+                                    <li><span className="closeList">reason three</span></li>
+                                </ul>
+                                <a className="btn btn-dark" href="https://www.calendly.com/" target="_blank" rel="noreferrer" role="button">Book</a>
+                            </div>
+                            <div className="col-3 border border-dark-subtle text-center p-3">
+                                <h4>Get a Quote</h4>
+                                <p className="pb-3">Lorem ipsum is made up text to be used as a placeholder. It helps to see approximately the length of text that will be appropriate.</p>
+                                <ul>
+                                    <li><span className="closeList">reason one</span></li>
+                                    <li><span className="closeList">reason two</span></li>
+                                    <li><span className="closeList">reason three</span></li>
+                                </ul>
+                                <a className="btn btn-dark" href="#about" role="button" data-bs-target="#contactFormModal" data-bs-toggle="modal">Go</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div className="modal fade" id="contactFormModal" aria-hidden="true" aria-labelledby="contactFormModal" tabindex="-1">
+            <div className="modal-dialog modal-lg">
+                <div className="modal-content">
+                <div className="modal-header">
+                    <button type="button" className="btn-back" data-bs-target="#calendlyModal" data-bs-toggle="modal"></button>
+                    <h1 className="modal-title fs-5" id="contactFormModal">Get a Quote</h1>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div className="modal-body">
+                <div className="container">
+                    <form className="row g-3">
+                        <div className="col-md-6">
+                            <label htmlFor="inputName" className="form-label">Name</label>
+                            <input type="name" className="form-control" id="inputName"/>
+                        </div>
+                        <div className="col-md-6">
+                            <label htmlFor="inputOrg" className="form-label">Organization</label>
+                            <input type="password" className="form-control" id="inputOrg"/>
+                        </div>
+                        <div className="col-12">
+                            <label htmlFor="inputReason" className="form-label">Select your reason for reaching out</label>
+                            <select id="inputReason" className="form-select">
+                            <option selected>Choose...</option>
+                            <option>I have a project</option>
+                            <option>Event/Speaker</option>
+                            <option>Career</option>
+                            <option>Press/Media</option>
+                            <option>General</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label htmlFor="inputEmail" className="form-label">Email</label>
+                            <input type="text" className="form-control" id="inputEmail"/>
+                        </div>
+                        <div className="col-md-6">
+                            <label htmlFor="inputPhone" className="form-label">Phone</label>
+                            <input type="text" className="form-control" id="inputPhone"/>
+                        </div>
+                        <div className="col-12">
+                            <label htmlFor="inputPref" className="form-label">Contact Preference</label>
+                            <div className="form-check">
+                                <input className="form-check-input" type="radio" name="contactPref" id="contactPref1" value="email"/>
+                                <label className="form-check-label" htmlFor="contactPref1">
+                                    Email
+                                </label>
+                                </div>
+                                <div className="form-check">
+                                <input className="form-check-input" type="radio" name="contactPref" id="contactPref2" value="phone"/>
+                                <label className="form-check-label" htmlFor="contactPref2">
+                                    Phone
+                                </label>
+                            </div>
+                        </div>
+                        <div className="col-12 offset-10 pb-3">
+                            <button type="submit" class="btn btn-dark">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div className="modal-footer">
+                </div>
                 </div>
                 </div>
             </div>
