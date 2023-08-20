@@ -28,7 +28,7 @@ const Home = () => {
     <div>
         <div>
             <img src={hero} alt="CD headshot" className="bg-img img-fluid"/>
-            <div className="container px-4 py-5 card-img-overlay"> 
+            <div className="container px-4 py-5 card-img-overlay min-vh-25"> 
                 <div className="row align-items-center pb-md-5 pt-3 pt-sm-5">
                 <div className="col-10 col-md-8 col-lg-6 py-md-5">
                     <h1 className="display-5 fw-bold text-light">Experience Design Made Simple</h1>
