@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import logo from "../assets/logo.svg";
-import linkedIn from "../assets/linkedin.png";
+import linkedIn from "../assets/linkedin.svg";
 
 const Layout = () => {
     return (
@@ -24,8 +24,8 @@ const Layout = () => {
       <footer className="footer bg-dark d-flex flex-column h-100"> 
         <div className="container">
           <footer>
-            <div className="col-12 text-right pb-3">
-                <a  href="https://www.linkedin.com/in/coledevoy/" target="_blank" rel="noreferrer"><img src={linkedIn} alt="link to LinkedIn" height="20"/></a>
+            <div className="col-12 text-right">
+                <a href="https://www.linkedin.com/in/coledevoy/" target="_blank" rel="noreferrer"><img src={linkedIn} alt="link to LinkedIn" height="24"/></a>
             </div>
             <div className="row py-3 justify-content-between">
                 <div className="col-6">
