@@ -42,10 +42,10 @@ const Home = () => {
         </div>
         <section className="container py-5">
             <div className="row justify-content-evenly" id="about">
-                <div className="col-5 py-5">
+                <div className="col-12 col-sm-5 py-3 py-sm-5">
                     <h2 className="text-secondary">Hi, I’m Cole.  I’m a total experience designer with expertise in multiple disciplines</h2>
                 </div>
-                <div className="col-4 py-5"><p className="text-secondary">I'm honored to serve in facilitation, strategy, and design capacities 
+                <div className="col-12 col-sm-4 py-3 py-sm-5"><p className="text-secondary">I'm honored to serve in facilitation, strategy, and design capacities 
                 alongside skilled teams across diverse domains. Together we address complex product and service 
                 design challenges and bring to life experiences that promote a sustainable and inclusive future.</p>
                     <div id="more" className="collapse pb-3">
