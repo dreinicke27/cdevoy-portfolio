@@ -25,7 +25,7 @@ const Layout = () => {
         <div className="container">
           <footer>
             <div className="col-12 text-right pb-3">
-                <img src={linkedIn} alt="link to LinkedIn" height="20" href="https://www.linkedin.com/in/coledevoy/" target="_blank" rel="noreferrer"/>
+                <a  href="https://www.linkedin.com/in/coledevoy/" target="_blank" rel="noreferrer"><img src={linkedIn} alt="link to LinkedIn" height="20"/></a>
             </div>
             <div className="row py-3 justify-content-between">
                 <div className="col-6">

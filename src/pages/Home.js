@@ -8,6 +8,7 @@ import cc from "../assets/cc.svg";
 import commbank from "../assets/commbank.svg";
 import cs from "../assets/credit_suisse.svg";
 import upCarrot from "../assets/upCarrot.svg";
+import back from "../assets/back.svg";
 import "../Custom.scss";
 import { useState } from 'react';
 import { PopupButton } from 'react-calendly';
@@ -130,10 +131,6 @@ const Home = () => {
                                 </ul>
                                 <PopupButton className="btn btn-dark"
                                     url="https://calendly.com/group6-cole?background_color=f2f2f2&text_color=212529&primary_color=212529"
-                                    /*
-                                    * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
-                                    * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
-                                    */
                                     rootElement={document.getElementById("root")}
                                     text="Book"
                                 />
@@ -148,10 +145,6 @@ const Home = () => {
                                 </ul>
                                 <PopupButton className="btn btn-dark"
                                     url="https://calendly.com/group6-cole?background_color=f2f2f2&text_color=212529&primary_color=212529"
-                                    /*
-                                    * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
-                                    * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
-                                    */
                                     rootElement={document.getElementById("root")}
                                     text="Book"
                                 />
@@ -179,7 +172,7 @@ const Home = () => {
             <div className="modal-dialog modal-lg modal-dialog-centered fadeInRight animated">
                 <div className="modal-content">
                 <div className="modal-header">
-                    <button type="button" className="btn-back" data-bs-target="#calendlyModal" data-bs-toggle="modal"></button>
+                    <img src={back} alt="back" className="mx-2" data-bs-toggle="modal" data-bs-target="#calendlyModal" height="24"/>
                     <h1 className="modal-title fs-5" id="contactFormModal">Get a Quote</h1>
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -255,9 +248,3 @@ const Home = () => {
 }
 
 export default Home;
-
-
-// rootElement={document.getElementById('root')}
-//                                         text="Schedule Time with me"
-//                                         textColor="#ffffff"
-//                                         color="#222222"
