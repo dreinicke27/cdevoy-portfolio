@@ -33,8 +33,8 @@ const Home = () => {
                 <div className="col-10 col-md-8 col-lg-6 py-md-5">
                     <h1 className="display-5 fw-bold text-light">Experience Design Made Simple</h1>
                     <div class="gap-3 d-flex pt-md-5">
-                        <button type="button" className="btn btn-light px-4 rounded-lg" data-bs-toggle="modal" data-bs-target="#calendlyModal">LET'S WORK TOGETHER</button>
-                        <a href="#about"><button type="button" className="btn btn-outline-light px-4 rounded-lg">ABOUT ME</button></a>
+                        <button type="button" className="btn btn-light px-sm-4 rounded-lg" data-bs-toggle="modal" data-bs-target="#calendlyModal">LET'S WORK TOGETHER</button>
+                        <a href="#about"><button type="button" className="btn btn-outline-light px-sm-4 rounded-lg">ABOUT ME</button></a>
                     </div>
                 </div>
                 </div>
@@ -62,7 +62,7 @@ const Home = () => {
                         to all. I excel in training non-design teams in design thinking, helping them tailor problem-solving
                         strategies to their unique organizational needs.</p>
                     </div>
-                    <div className="col-1 offset-8">
+                    <div className="col-1 offset-8 d-none d-sm-block">
                         <button className={displayButton} data-bs-toggle="collapse" data-bs-target="#more" onClick={onExpand}>more</button>
                     </div>
                 </div>
