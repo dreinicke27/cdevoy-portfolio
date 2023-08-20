@@ -10,6 +10,7 @@ import cs from "../assets/credit_suisse.svg";
 import upCarrot from "../assets/upCarrot.svg";
 import "../Custom.scss";
 import { useState } from 'react';
+import { PopupButton } from 'react-calendly';
 
 const Home = () => {
     const [about, setAbout] = useState(false);
@@ -20,8 +21,6 @@ const Home = () => {
     const onExpand = () => {
         setAbout(!about);
     };
-
-
 
 
     return (
@@ -112,7 +111,7 @@ const Home = () => {
         </section>
 
         <div className="modal fade" id="calendlyModal" tabindex="-1" aria-labelledby="calendlyModalLabel" aria-hidden="true">
-            <div className="modal-dialog modal-lg">
+            <div className="modal-dialog modal-dialog-centered modal-lg">
                 <div className="modal-content">
                 <div className="modal-header">
                     <h1 className="modal-title fs-5" id="calendlyModalLabel">Let's Work Together</h1>
@@ -129,7 +128,15 @@ const Home = () => {
                                     <li><span className="closeList">reason two</span></li>
                                     <li><span className="closeList">reason three</span></li>
                                 </ul>
-                                <a className="btn btn-dark" href="https://www.calendly.com/" target="_blank" rel="noreferrer" role="button">Book</a>
+                                <PopupButton className="btn btn-dark"
+                                    url="https://calendly.com/group6-cole?background_color=f2f2f2&text_color=212529&primary_color=212529"
+                                    /*
+                                    * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
+                                    * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
+                                    */
+                                    rootElement={document.getElementById("root")}
+                                    text="Book"
+                                />
                             </div>
                             <div className="col-3 border border-dark-subtle text-center p-3">
                                 <h4>Book Me!</h4>
@@ -139,7 +146,15 @@ const Home = () => {
                                     <li><span className="closeList">reason two</span></li>
                                     <li><span className="closeList">reason three</span></li>
                                 </ul>
-                                <a className="btn btn-dark" href="https://www.calendly.com/" target="_blank" rel="noreferrer" role="button">Book</a>
+                                <PopupButton className="btn btn-dark"
+                                    url="https://calendly.com/group6-cole?background_color=f2f2f2&text_color=212529&primary_color=212529"
+                                    /*
+                                    * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
+                                    * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
+                                    */
+                                    rootElement={document.getElementById("root")}
+                                    text="Book"
+                                />
                             </div>
                             <div className="col-3 border border-dark-subtle text-center p-3">
                                 <h4>Get a Quote</h4>
@@ -149,7 +164,7 @@ const Home = () => {
                                     <li><span className="closeList">reason two</span></li>
                                     <li><span className="closeList">reason three</span></li>
                                 </ul>
-                                <a className="btn btn-dark" href="#about" role="button" data-bs-target="#contactFormModal" data-bs-toggle="modal">Go</a>
+                                <button className="btn btn-dark" data-bs-target="#contactFormModal" data-bs-toggle="modal">Go</button>
                             </div>
                         </div>
                     </div>
@@ -160,8 +175,8 @@ const Home = () => {
             </div>
         </div>
 
-        <div className="modal fade" id="contactFormModal" aria-hidden="true" aria-labelledby="contactFormModal" tabindex="-1">
-            <div className="modal-dialog modal-lg">
+        <div className="modal" id="contactFormModal" aria-hidden="true" aria-labelledby="contactFormModal" tabindex="-1">
+            <div className="modal-dialog modal-lg modal-dialog-centered fadeInRight animated">
                 <div className="modal-content">
                 <div className="modal-header">
                     <button type="button" className="btn-back" data-bs-target="#calendlyModal" data-bs-toggle="modal"></button>
@@ -213,6 +228,10 @@ const Home = () => {
                                 </label>
                             </div>
                         </div>
+                        <div className="col-12">
+                            <label htmlFor="notes" className="form-label">Notes</label>
+                            <textarea className="form-control" id="message" name="message" rows="4"></textarea>
+                        </div>
                         <div className="col-12 offset-10 pb-3">
                             <button type="submit" class="btn btn-dark">Submit</button>
                         </div>
@@ -224,6 +243,11 @@ const Home = () => {
                 </div>
             </div>
         </div>
+
+
+        
+
+
     </div>
 
 
@@ -231,3 +255,9 @@ const Home = () => {
 }
 
 export default Home;
+
+
+// rootElement={document.getElementById('root')}
+//                                         text="Schedule Time with me"
+//                                         textColor="#ffffff"
+//                                         color="#222222"

@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
-import logo from "../assets/logo.svg"
+import logo from "../assets/logo.svg";
+import linkedIn from "../assets/linkedin.png";
 
 const Layout = () => {
     return (
@@ -22,10 +23,15 @@ const Layout = () => {
       <Outlet />
       <footer className="footer bg-dark d-flex flex-column h-100"> 
         <div className="container">
-          <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
-              <div className="d-flex align-items-center">
-                <span className="mb-3 mb-md-0 text-light">© 2023 Cole Devoy</span>
-              </div>
+          <footer>
+            <div className="col-12 text-right pb-3">
+                <img src={linkedIn} alt="link to LinkedIn" height="20" href="https://www.linkedin.com/in/coledevoy/" target="_blank" rel="noreferrer"/>
+            </div>
+            <div className="row py-3 justify-content-between">
+                <div className="col-6">
+                    <p className="text-light">© 2023 Cole Devoy</p>
+                </div>    
+            </div>
           </footer>
         </div>
       </footer>
