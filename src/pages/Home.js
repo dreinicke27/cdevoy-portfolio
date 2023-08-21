@@ -121,7 +121,7 @@ const Home = () => {
                 <div className="modal-body">
                     <div className="modal-split">
                         <div className="row justify-content-evenly">
-                            <div className="col-3 border border-dark-subtle text-center p-3">
+                            <div className="col-12 col-sm-3 border border-dark-subtle text-center p-3">
                                 <h4>Book Me!</h4>
                                 <p className="pb-3">Lorem ipsum is made up text to be used as a placeholder. It helps to see approximately the length of text that will be appropriate.</p>
                                 <ul>
@@ -135,7 +135,7 @@ const Home = () => {
                                     text="Book"
                                 />
                             </div>
-                            <div className="col-3 border border-dark-subtle text-center p-3">
+                            <div className="col-12 col-sm-3 border border-dark-subtle text-center p-3">
                                 <h4>Book Me!</h4>
                                 <p className="pb-3">Lorem ipsum is made up text to be used as a placeholder. It helps to see approximately the length of text that will be appropriate.</p>
                                 <ul>
@@ -149,7 +149,7 @@ const Home = () => {
                                     text="Book"
                                 />
                             </div>
-                            <div className="col-3 border border-dark-subtle text-center p-3">
+                            <div className="col-12 col-sm-3 border border-dark-subtle text-center p-3">
                                 <h4>Get a Quote</h4>
                                 <p className="pb-3">Lorem ipsum is made up text to be used as a placeholder. It helps to see approximately the length of text that will be appropriate.</p>
                                 <ul>
