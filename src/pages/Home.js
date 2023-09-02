@@ -8,14 +8,22 @@ import cc from "../assets/cc.svg";
 import commbank from "../assets/commbank.svg";
 import cs from "../assets/credit_suisse.svg";
 import upCarrot from "../assets/upCarrot.svg";
-import back from "../assets/back.svg";
 import "../Custom.scss";
-import { useState } from 'react';
-import { PopupButton } from 'react-calendly';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
+const INITIAL_FORM_DATA = {
+    name: "",
+    org: "",
+    email: "",
+    phone: "",
+    pref: "Email", 
+    reason: "I need help with a project", 
+    notes: ""
+  };
 
 const Home = () => {
     const [about, setAbout] = useState(false);
-
     const displayButton = about ? "d-none" : "btn btn-sm btn-light px-4 rounded-lg fw-bold"; 
     const displayCarrot = about ? "mx-auto" : "d-none";
 
@@ -23,29 +31,86 @@ const Home = () => {
         setAbout(!about);
     };
 
+    const onAboutClick = () => {
+        if (about === false) {
+            setAbout(!about);
+        };
+    };
+
+    //contact form fields
+    const [sumbitMessage, setSubmitMessage] = useState('');
+    const [formData, setFormData] = useState(INITIAL_FORM_DATA);
+
+    const handleChange = (event) => {
+        const newFormData = {
+        ...formData,
+        [event.target.name]: event.target.value,
+        };
+        setFormData(newFormData);
+    };
+
+    const [error, setError] = useState('');
+
+    const validateInput = () => {
+        if (!formData.email.includes("@") && formData.phone.length !== 10) {
+            setError("Please enter a valid email address. Please enter a valid phone number with no punctuation.");
+            return false;
+        } else if (!formData.email.includes("@")) {
+            setError("Please enter a valid email address.");
+            return false;
+        } else if (formData.phone.length !== 10) {
+            setError("Please enter a valid phone number with no punctuation.");
+            return false;
+        } else {
+            return true;
+        }
+        };
+      
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        const isValid = validateInput();
+        if (isValid) {
+            emailjs.sendForm(process.env.REACT_APP_EMAIL_SERVICE, process.env.REACT_APP_EMAIL_TEMPLATE_CONTACT, form.current, process.env.REACT_APP_EMAIL_PUBLIC_KEY)
+                .then((result) => {
+                    console.log(result.text);
+                    setSubmitMessage("Success! Your message has been submitted. We will reply ASAP.");
+                    setFormData(INITIAL_FORM_DATA);
+                    setError("");
+                }, (error) => {
+                    console.log(error.text);
+                    setSubmitMessage("");
+                });
+        } else {
+            return;
+        }
+        };
 
     return (
     <div>
         <div>
             <img src={hero} alt="CD headshot" className="bg-img img-fluid"/>
             <div className="container px-4 py-5 card-img-overlay min-vh-25"> 
-                <div className="row align-items-center pb-md-5 pt-3 pt-sm-5">
+                <div className="row align-items-center pb-md-5 pt-5 pt-sm-5">
                 <div className="col-10 col-md-8 col-lg-6 py-md-5">
                     <h1 className="display-5 fw-bold text-light">Experience Design Made Simple</h1>
-                    <div class="gap-3 d-flex pt-md-5">
-                        <button type="button" className="btn btn-light px-sm-4 rounded-lg" data-bs-toggle="modal" data-bs-target="#calendlyModal">LET'S WORK TOGETHER</button>
-                        <a href="#about"><button type="button" className="btn btn-outline-light px-sm-4 rounded-lg">ABOUT ME</button></a>
+                    <div className="gap-3 d-flex pt-md-5">
+                        <button type="button" className="btn btn-light px-sm-4 rounded-lg" data-bs-toggle="modal" data-bs-target="#contactModal">LET'S WORK TOGETHER</button>
+                        <a href="#about"><button type="button" className="btn btn-outline-light px-sm-4 rounded-lg" data-bs-toggle="collapse" data-bs-target="#more" onClick={onAboutClick}>ABOUT ME</button></a>
                     </div>
                 </div>
                 </div>
             </div>
         </div>
-        <section className="container py-5">
-            <div className="row justify-content-evenly" id="about">
-                <div className="col-12 col-sm-5 py-3 py-sm-5">
+        <section className="container py-5"id="about">
+            <div className="row justify-content-evenly">
+                <div className="col-xs-12 col-sm-5 py-3 py-sm-5">
                     <h2 className="text-secondary">Hi, I’m Cole.  I’m a total experience designer with expertise in multiple disciplines</h2>
                 </div>
-                <div className="col-12 col-sm-4 py-3 py-sm-5"><p className="text-secondary">I'm honored to serve in facilitation, strategy, and design capacities 
+                <div className="col-xs-12 col-sm-4 py-3 py-sm-5"><p className="text-secondary">I'm honored to serve in facilitation, strategy, and design capacities 
                 alongside skilled teams across diverse domains. Together we address complex product and service 
                 design challenges and bring to life experiences that promote a sustainable and inclusive future.</p>
                     <div id="more" className="collapse pb-3">
@@ -62,7 +127,7 @@ const Home = () => {
                         to all. I excel in training non-design teams in design thinking, helping them tailor problem-solving
                         strategies to their unique organizational needs.</p>
                     </div>
-                    <div className="col-1 offset-8 d-none d-sm-block">
+                    <div className="col-1 offset-8 d-block">
                         <button className={displayButton} data-bs-toggle="collapse" data-bs-target="#more" onClick={onExpand}>more</button>
                     </div>
                 </div>
@@ -111,123 +176,58 @@ const Home = () => {
             </div>
         </section>
 
-        <div className="modal fade" id="calendlyModal" tabindex="-1" aria-labelledby="calendlyModalLabel" aria-hidden="true">
-            <div className="modal-dialog modal-dialog-centered modal-lg">
-                <div className="modal-content">
-                <div className="modal-header">
-                    <h1 className="modal-title fs-5" id="calendlyModalLabel">Let's Work Together</h1>
-                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div className="modal-body">
-                    <div className="modal-split">
-                        <div className="row justify-content-evenly">
-                            <div className="col-12 col-sm-3 border border-dark-subtle text-center p-3">
-                                <h4>Book Me!</h4>
-                                <p className="pb-3">Lorem ipsum is made up text to be used as a placeholder. It helps to see approximately the length of text that will be appropriate.</p>
-                                <ul>
-                                    <li><span className="closeList">reason one</span></li>
-                                    <li><span className="closeList">reason two</span></li>
-                                    <li><span className="closeList">reason three</span></li>
-                                </ul>
-                                <PopupButton className="btn btn-dark"
-                                    url="https://calendly.com/group6-cole?background_color=f2f2f2&text_color=212529&primary_color=212529"
-                                    rootElement={document.getElementById("root")}
-                                    text="Book"
-                                />
-                            </div>
-                            <div className="col-12 col-sm-3 border border-dark-subtle text-center p-3">
-                                <h4>Book Me!</h4>
-                                <p className="pb-3">Lorem ipsum is made up text to be used as a placeholder. It helps to see approximately the length of text that will be appropriate.</p>
-                                <ul>
-                                    <li><span className="closeList">reason one</span></li>
-                                    <li><span className="closeList">reason two</span></li>
-                                    <li><span className="closeList">reason three</span></li>
-                                </ul>
-                                <PopupButton className="btn btn-dark"
-                                    url="https://calendly.com/group6-cole?background_color=f2f2f2&text_color=212529&primary_color=212529"
-                                    rootElement={document.getElementById("root")}
-                                    text="Book"
-                                />
-                            </div>
-                            <div className="col-12 col-sm-3 border border-dark-subtle text-center p-3">
-                                <h4>Get a Quote</h4>
-                                <p className="pb-3">Lorem ipsum is made up text to be used as a placeholder. It helps to see approximately the length of text that will be appropriate.</p>
-                                <ul>
-                                    <li><span className="closeList">reason one</span></li>
-                                    <li><span className="closeList">reason two</span></li>
-                                    <li><span className="closeList">reason three</span></li>
-                                </ul>
-                                <button className="btn btn-dark" data-bs-target="#contactFormModal" data-bs-toggle="modal">Go</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="modal-footer">
-                </div>
-                </div>
-            </div>
-        </div>
-
-        <div className="modal" id="contactFormModal" aria-hidden="true" aria-labelledby="contactFormModal" tabindex="-1">
+        <div className="modal" id="contactModal" aria-hidden="true" aria-labelledby="contactModal" tabIndex="-1">
             <div className="modal-dialog modal-lg modal-dialog-centered fadeInRight animated">
                 <div className="modal-content">
                 <div className="modal-header">
-                    <img src={back} alt="back" className="mx-2" data-bs-toggle="modal" data-bs-target="#calendlyModal" height="24"/>
-                    <h1 className="modal-title fs-5" id="contactFormModal">Get a Quote</h1>
+                    <h1 className="modal-title fs-5" id="contactFormModal"> Contact</h1>
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div className="modal-body">
                 <div className="container">
-                    <form className="row g-3">
+                    <form ref={form} className="row g-3" onSubmit={sendEmail}>
                         <div className="col-md-6">
                             <label htmlFor="inputName" className="form-label">Name</label>
-                            <input type="name" className="form-control" id="inputName"/>
+                            <input type="name" className="form-control" id="inputName" name="name" required value={formData.name} onChange={handleChange}/>
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="inputOrg" className="form-label">Organization</label>
-                            <input type="password" className="form-control" id="inputOrg"/>
+                            <input type="text" className="form-control" id="inputOrg" name="org" required value={formData.org} onChange={handleChange}/>
                         </div>
                         <div className="col-12">
                             <label htmlFor="inputReason" className="form-label">Select your reason for reaching out</label>
-                            <select id="inputReason" className="form-select">
-                            <option selected>Choose...</option>
-                            <option>I have a project</option>
-                            <option>Event/Speaker</option>
-                            <option>Career</option>
-                            <option>Press/Media</option>
-                            <option>General</option>
+                            <select id="inputReason" className="form-select" name="reason" value={formData.reason} onChange={handleChange}>
+                            <option value="I need help with a project">I need help with a project</option>
+                            <option value="I’m looking for an event host or speaker">I’m looking for an event host or speaker</option>
+                            <option value="I’m looking for a job">I’m looking for a job</option>
+                            <option value="I have a press/media request">I have a press/media request</option>
                             </select>
                         </div>
-                        <div class="col-md-6">
+                        <div className="col-md-6">
                             <label htmlFor="inputEmail" className="form-label">Email</label>
-                            <input type="text" className="form-control" id="inputEmail"/>
+                            <input type="text" className="form-control" id="inputEmail" name="email" required value={formData.email} onChange={handleChange}/>
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="inputPhone" className="form-label">Phone</label>
-                            <input type="text" className="form-control" id="inputPhone"/>
+                            <input type="text" className="form-control" id="inputPhone" name="phone" required value={formData.phone} onChange={handleChange}/>
                         </div>
                         <div className="col-12">
                             <label htmlFor="inputPref" className="form-label">Contact Preference</label>
-                            <div className="form-check">
-                                <input className="form-check-input" type="radio" name="contactPref" id="contactPref1" value="email"/>
-                                <label className="form-check-label" htmlFor="contactPref1">
-                                    Email
-                                </label>
-                                </div>
-                                <div className="form-check">
-                                <input className="form-check-input" type="radio" name="contactPref" id="contactPref2" value="phone"/>
-                                <label className="form-check-label" htmlFor="contactPref2">
-                                    Phone
-                                </label>
-                            </div>
+                            <select id="inputPref" className="form-select" name="pref" value={formData.pref} onChange={handleChange}>
+                            <option value="email">Email</option>
+                            <option value="phone">Phone</option>
+                            <option value="no preference">No preference</option>
+                            </select>
                         </div>
                         <div className="col-12">
                             <label htmlFor="notes" className="form-label">Notes</label>
-                            <textarea className="form-control" id="message" name="message" rows="4"></textarea>
+                            <textarea className="form-control" id="message" name="notes" rows="4" value={formData.notes} onChange={handleChange}></textarea>
                         </div>
                         <div className="col-12 offset-10 pb-3">
-                            <button type="submit" class="btn btn-dark">Submit</button>
+                            <button type="submit" className="btn btn-dark">Submit</button>
                         </div>
+                        <span>{error}</span>
+                        <span>{sumbitMessage}</span>
                     </form>
                 </div>
                 <div className="modal-footer">
@@ -238,9 +238,6 @@ const Home = () => {
         </div>
 
 
-        
-
-
     </div>
 
 
@@ -248,3 +245,63 @@ const Home = () => {
 }
 
 export default Home;
+
+
+
+
+{/* <div className="modal fade" id="calendlyModal" tabindex="-1" aria-labelledby="calendlyModalLabel" aria-hidden="true">
+<div className="modal-dialog modal-dialog-centered modal-lg">
+    <div className="modal-content">
+    <div className="modal-header">
+        <h1 className="modal-title fs-5" id="calendlyModalLabel">Let's Work Together</h1>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div className="modal-body">
+        <div className="modal-split">
+            <div className="row justify-content-evenly">
+                <div className="col-12 col-sm-3 border border-dark-subtle text-center p-3">
+                    <h4>Book Me!</h4>
+                    <p className="pb-3">Lorem ipsum is made up text to be used as a placeholder. It helps to see approximately the length of text that will be appropriate.</p>
+                    <ul>
+                        <li><span className="closeList">reason one</span></li>
+                        <li><span className="closeList">reason two</span></li>
+                        <li><span className="closeList">reason three</span></li>
+                    </ul>
+                    <PopupButton className="btn btn-dark"
+                        url="https://calendly.com/group6-cole?background_color=f2f2f2&text_color=212529&primary_color=212529"
+                        rootElement={document.getElementById("root")}
+                        text="Book"
+                    />
+                </div>
+                <div className="col-12 col-sm-3 border border-dark-subtle text-center p-3">
+                    <h4>Book Me!</h4>
+                    <p className="pb-3">Lorem ipsum is made up text to be used as a placeholder. It helps to see approximately the length of text that will be appropriate.</p>
+                    <ul>
+                        <li><span className="closeList">reason one</span></li>
+                        <li><span className="closeList">reason two</span></li>
+                        <li><span className="closeList">reason three</span></li>
+                    </ul>
+                    <PopupButton className="btn btn-dark"
+                        url="https://calendly.com/group6-cole?background_color=f2f2f2&text_color=212529&primary_color=212529"
+                        rootElement={document.getElementById("root")}
+                        text="Book"
+                    />
+                </div>
+                <div className="col-12 col-sm-3 border border-dark-subtle text-center p-3">
+                    <h4>Get a Quote</h4>
+                    <p className="pb-3">Lorem ipsum is made up text to be used as a placeholder. It helps to see approximately the length of text that will be appropriate.</p>
+                    <ul>
+                        <li><span className="closeList">reason one</span></li>
+                        <li><span className="closeList">reason two</span></li>
+                        <li><span className="closeList">reason three</span></li>
+                    </ul>
+                    <button className="btn btn-dark" data-bs-target="#contactFormModal" data-bs-toggle="modal">Go</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div className="modal-footer">
+    </div>
+    </div>
+</div>
+</div> */}

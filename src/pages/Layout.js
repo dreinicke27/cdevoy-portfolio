@@ -22,7 +22,7 @@ const Layout = () => {
 
       <Outlet />
       <footer className="footer bg-dark d-flex flex-column h-100"> 
-        <div className="container">
+        <div className="container-fluid">
           <footer>
             <div className="col-12 text-right">
                 <a href="https://www.linkedin.com/in/coledevoy/" target="_blank" rel="noreferrer"><img src={linkedIn} alt="link to LinkedIn" height="24"/></a>
