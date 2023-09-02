@@ -93,10 +93,10 @@ const Home = () => {
     <div>
         <div>
             <img src={hero} alt="CD headshot" className="bg-img img-fluid"/>
-            <div className="container px-4 py-5 card-img-overlay min-vh-25"> 
+            <div className="container px-4 py-3 py-sm-5 card-img-overlay min-vh-25"> 
                 <div className="row align-items-center pb-md-5 pt-5 pt-sm-5">
-                <div className="col-10 col-md-8 col-lg-6 py-md-5">
-                    <h1 className="display-5 fw-bold text-light">Experience Design Made Simple</h1>
+                <div className="col-11 col-sm-9 col-md-8 col-lg-5 col-xl-4 py-md-5">
+                    <h1 className="display-sm-5 display-6 fw-bold text-light">Experience Design Made Simple</h1>
                     <div className="gap-3 d-flex pt-md-5">
                         <button type="button" className="btn btn-light px-sm-4 rounded-lg" data-bs-toggle="modal" data-bs-target="#contactModal">LET'S WORK TOGETHER</button>
                         <a href="#about"><button type="button" className="btn btn-outline-light px-sm-4 rounded-lg" data-bs-toggle="collapse" data-bs-target="#more" onClick={onAboutClick}>ABOUT ME</button></a>
@@ -105,7 +105,7 @@ const Home = () => {
                 </div>
             </div>
         </div>
-        <section className="container py-5"id="about">
+        <section className="container py-5" id="about">
             <div className="row justify-content-evenly">
                 <div className="col-xs-12 col-sm-5 py-3 py-sm-5">
                     <h2 className="text-secondary">Hi, I’m Cole.  I’m a total experience designer with expertise in multiple disciplines</h2>
