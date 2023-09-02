@@ -187,11 +187,11 @@ const Home = () => {
                 <div className="container">
                     <form ref={form} className="row g-3" onSubmit={sendEmail}>
                         <div className="col-md-6">
-                            <label htmlFor="inputName" className="form-label">Name</label>
+                            <label htmlFor="inputName" className="form-label">Name *</label>
                             <input type="name" className="form-control" id="inputName" name="name" required value={formData.name} onChange={handleChange}/>
                         </div>
                         <div className="col-md-6">
-                            <label htmlFor="inputOrg" className="form-label">Organization</label>
+                            <label htmlFor="inputOrg" className="form-label">Organization *</label>
                             <input type="text" className="form-control" id="inputOrg" name="org" required value={formData.org} onChange={handleChange}/>
                         </div>
                         <div className="col-12">
@@ -204,11 +204,11 @@ const Home = () => {
                             </select>
                         </div>
                         <div className="col-md-6">
-                            <label htmlFor="inputEmail" className="form-label">Email</label>
+                            <label htmlFor="inputEmail" className="form-label">Email *</label>
                             <input type="text" className="form-control" id="inputEmail" name="email" required value={formData.email} onChange={handleChange}/>
                         </div>
                         <div className="col-md-6">
-                            <label htmlFor="inputPhone" className="form-label">Phone</label>
+                            <label htmlFor="inputPhone" className="form-label">Phone *</label>
                             <input type="text" className="form-control" id="inputPhone" name="phone" required value={formData.phone} onChange={handleChange}/>
                         </div>
                         <div className="col-12">
@@ -226,7 +226,7 @@ const Home = () => {
                         <div className="col-12 offset-10 pb-3">
                             <button type="submit" className="btn btn-dark">Submit</button>
                         </div>
-                        <span>{error}</span>
+                        <span className="text-danger">{error}</span>
                         <span>{sumbitMessage}</span>
                     </form>
                 </div>
@@ -249,59 +249,4 @@ export default Home;
 
 
 
-{/* <div className="modal fade" id="calendlyModal" tabindex="-1" aria-labelledby="calendlyModalLabel" aria-hidden="true">
-<div className="modal-dialog modal-dialog-centered modal-lg">
-    <div className="modal-content">
-    <div className="modal-header">
-        <h1 className="modal-title fs-5" id="calendlyModalLabel">Let's Work Together</h1>
-        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div className="modal-body">
-        <div className="modal-split">
-            <div className="row justify-content-evenly">
-                <div className="col-12 col-sm-3 border border-dark-subtle text-center p-3">
-                    <h4>Book Me!</h4>
-                    <p className="pb-3">Lorem ipsum is made up text to be used as a placeholder. It helps to see approximately the length of text that will be appropriate.</p>
-                    <ul>
-                        <li><span className="closeList">reason one</span></li>
-                        <li><span className="closeList">reason two</span></li>
-                        <li><span className="closeList">reason three</span></li>
-                    </ul>
-                    <PopupButton className="btn btn-dark"
-                        url="https://calendly.com/group6-cole?background_color=f2f2f2&text_color=212529&primary_color=212529"
-                        rootElement={document.getElementById("root")}
-                        text="Book"
-                    />
-                </div>
-                <div className="col-12 col-sm-3 border border-dark-subtle text-center p-3">
-                    <h4>Book Me!</h4>
-                    <p className="pb-3">Lorem ipsum is made up text to be used as a placeholder. It helps to see approximately the length of text that will be appropriate.</p>
-                    <ul>
-                        <li><span className="closeList">reason one</span></li>
-                        <li><span className="closeList">reason two</span></li>
-                        <li><span className="closeList">reason three</span></li>
-                    </ul>
-                    <PopupButton className="btn btn-dark"
-                        url="https://calendly.com/group6-cole?background_color=f2f2f2&text_color=212529&primary_color=212529"
-                        rootElement={document.getElementById("root")}
-                        text="Book"
-                    />
-                </div>
-                <div className="col-12 col-sm-3 border border-dark-subtle text-center p-3">
-                    <h4>Get a Quote</h4>
-                    <p className="pb-3">Lorem ipsum is made up text to be used as a placeholder. It helps to see approximately the length of text that will be appropriate.</p>
-                    <ul>
-                        <li><span className="closeList">reason one</span></li>
-                        <li><span className="closeList">reason two</span></li>
-                        <li><span className="closeList">reason three</span></li>
-                    </ul>
-                    <button className="btn btn-dark" data-bs-target="#contactFormModal" data-bs-toggle="modal">Go</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div className="modal-footer">
-    </div>
-    </div>
-</div>
-</div> */}
+
