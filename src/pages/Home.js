@@ -95,7 +95,7 @@ const Home = () => {
             <img src={hero} alt="CD headshot" className="bg-img img-fluid"/>
             <div className="container px-4 py-3 py-sm-5 card-img-overlay min-vh-25"> 
                 <div className="row align-items-center pb-md-5 pt-5 pt-sm-5">
-                <div className="col-11 col-sm-9 col-md-8 col-lg-5 col-xl-4 py-md-5">
+                <div className="col-11 col-sm-9 col-md-8 col-lg-5 col-xl-5 py-md-5">
                     <h1 className="display-sm-5 display-6 fw-bold text-light">Experience Design Made Simple</h1>
                     <div className="gap-3 d-flex pt-md-5">
                         <button type="button" className="btn btn-light px-sm-4 rounded-lg" data-bs-toggle="modal" data-bs-target="#contactModal">LET'S WORK TOGETHER</button>
