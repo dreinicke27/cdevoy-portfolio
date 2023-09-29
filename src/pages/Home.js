@@ -110,22 +110,17 @@ const Home = () => {
                 <div className="col-xs-12 col-sm-5 py-3 py-sm-5">
                     <h2 className="text-secondary">Hi, I’m Cole.  I’m a total experience designer with expertise in multiple disciplines</h2>
                 </div>
-                <div className="col-xs-12 col-sm-4 py-3 py-sm-5"><p className="text-secondary">I'm honored to serve in facilitation, strategy, and design capacities 
-                alongside skilled teams across diverse domains. Together we address complex product and service 
-                design challenges and bring to life experiences that promote a sustainable and inclusive future.</p>
+                <div className="col-xs-12 col-sm-4 py-3 py-sm-5"><p className="text-secondary">I'm honored to serve in facilitation, strategy, and design capacities alongside skilled teams across diverse domains. 
+                Together we address complex product and service design challenges and bring to life experiences that promote a sustainable and inclusive future.</p>
                     <div id="more" className="collapse pb-3">
-                        <p className="text-secondary">My journey has been one of continuous growth, and I take 
-                        pride in crafting elegant solutions that enrich people's lives. Total Experience Design includes 
-                        starting with a deep understanding of the challenges and the services currently in place to solve 
-                        them. Well-versed in graphic design, UI, visual design, and UX and interaction design as well as 
-                        service design, strategy, and implementation consulting services. With Nielsen/Norman Group UX 
-                        Management certification and a certification with distinction in Design Leadership from the 
-                        University of Pennsylvania, I possess a diverse skill set to create exceptional experiences.</p>
+                        <p className="text-secondary">My journey has been one of continuous growth, and I take pride in crafting elegant solutions that enrich people's lives. Total Experience Design includes starting with a deep understanding of the challenges and the services currently in place to solve them.</p>
+                        <p className="text-secondary">Since my journey began as a youth in graphic and visual design, I've continued to immerse myself more deeply into the world of interface and experience design. After spending years with in-house teams designing and iterating on products ranging from enterprise SaaS platforms to AI and 
+                        large language models, I pivoted toward design for climate initiatives, be they brand, service, or product-related. With recent training from Nielsen/Norman Group and the University of Pennsylvania for UX Management and Executive Design Leadership, respectively, I possess a diverse 
+                        skill set that drives exceptional outcomes.</p>
                         
-                        <p className="text-secondary">Practicing extreme empathy and participatory design, I prioritize problem/solution fit. 
-                        Core to my values is accessibility and equity, driving my commitment to experiences accessible 
-                        to all. I excel in training non-design teams in design thinking, helping them tailor problem-solving
-                        strategies to their unique organizational needs.</p>
+                        <p className="text-secondary">Practicing extreme empathy and participatory design, I prioritize problem-solution fit. Core to my values are accessibility and equity, driving my commitment to creating inclusive experiences. </p>
+                        <p className="text-secondary">My goal is to help organizations leverage the power of user-centered processes to continuously improve their product and service delivery. I tailor problem-solving strategies to their unique organizational 
+                        needs and excel at training non-design teams in design thinking and iterative development methodologies.</p>
                     </div>
                     <div className="col-1 offset-8 d-block">
                         <button className={displayButton} data-bs-toggle="collapse" data-bs-target="#more" onClick={onExpand}>more</button>
