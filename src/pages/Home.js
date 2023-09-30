@@ -96,7 +96,7 @@ const Home = () => {
             <div className="container px-4 py-3 py-sm-5 card-img-overlay min-vh-25"> 
                 <div className="row align-items-center pb-md-5 pt-5 pt-sm-5">
                 <div className="col-11 col-sm-9 col-md-8 col-lg-5 col-xl-5 py-md-5">
-                    <h1 className="display-sm-5 display-6 fw-bold text-light">Experience Design Made Simple</h1>
+                    <h1 className="display-sm-5 display-6 fw-bold text-light">Experience Design, Strategy, Innovation</h1>
                     <div className="gap-3 d-flex pt-md-5">
                         <button type="button" className="btn btn-light px-sm-4 rounded-lg" data-bs-toggle="modal" data-bs-target="#contactModal">LET'S WORK TOGETHER</button>
                         <a href="#about"><button type="button" className="btn btn-outline-light px-sm-4 rounded-lg" data-bs-toggle="collapse" data-bs-target="#more" onClick={onAboutClick}>ABOUT ME</button></a>
@@ -110,7 +110,7 @@ const Home = () => {
                 <div className="col-xs-12 col-sm-5 py-3 py-sm-5">
                     <h2 className="text-secondary">Hi, I’m Cole.  I’m a total experience designer with expertise in multiple disciplines</h2>
                 </div>
-                <div className="col-xs-12 col-sm-4 py-3 py-sm-5"><p className="text-secondary">I'm honored to serve in facilitation, strategy, and design capacities alongside skilled teams across diverse domains. 
+                <div className="col-xs-12 col-sm-4 py-3 py-sm-5"><p className="text-secondary">I serve in facilitation, strategy, and design capacities alongside skilled teams across various domains. 
                 Together we address complex product and service design challenges and bring to life experiences that promote a sustainable and inclusive future.</p>
                     <div id="more" className="collapse pb-3">
                         <p className="text-secondary">My journey has been one of continuous growth, and I take pride in crafting elegant solutions that enrich people's lives. Total Experience Design includes starting with a deep understanding of the challenges and the services currently in place to solve them.</p>
@@ -136,28 +136,28 @@ const Home = () => {
             <h2 className="mx-auto text-secondary">Some orgs I'm proud to have worked with</h2>
             <div className="row py-5">
                 <div className="col-lg-3 col-sm-6 col-xs-12 py-3">
-                    <img src={stanford} className="thumbnail img-responsive" alt="stanford"/>
+                    <img src={stanford} className="thumbnail img-responsive" alt="Stanfort University"/>
                 </div>
                 <div className="col-lg-3 col-sm-6 col-xs-12 py-3">
-                    <img src={cs} className="thumbnail img-responsive" alt="credit suisse"/>
+                    <img src={cs} className="thumbnail img-responsive" alt="Credit Suisse"/>
                 </div>
                 <div className="col-lg-3 col-sm-6 col-xs-12 py-3">
-                    <img src={cc} className="thumbnail img-responsive" alt="cc"/>
+                    <img src={cc} className="thumbnail img-responsive" alt="California College of the Arts"/>
                 </div>
                 <div className="col-lg-3 col-sm-6 col-xs-12 py-3">
-                    <img src={aer} className="thumbnail img-responsive" alt="aer"/>
+                    <img src={aer} className="thumbnail img-responsive" alt="The Association for the Education and Rehabilitation of the Blind and Visually Impaired"/>
                 </div>
                 <div className="col-lg-3 col-sm-6 col-xs-12 py-3">
-                    <img src={bcbs} className="thumbnail img-responsive" alt="blue cross blue shield"/>
+                    <img src={bcbs} className="thumbnail img-responsive" alt="Blue Cross Blue Shield"/>
                 </div>
                 <div className="col-lg-3 col-sm-6 col-xs-12 py-3">
-                    <img src={berkeley} className="thumbnail img-responsive" alt="berkeley"/>
+                    <img src={berkeley} className="thumbnail img-responsive" alt="The University of California at Berkeley"/>
                 </div>
                 <div className="col-lg-3 col-sm-6 col-xs-12 py-3">
-                    <img src={bmo} className="thumbnail img-responsive" alt="bmo"/>
+                    <img src={bmo} className="thumbnail img-responsive" alt="Bank of Montreal"/>
                 </div>
                 <div className="col-lg-3 col-sm-6 col-xs-12 py-3">
-                    <img src={commbank} className="thumbnail img-responsive" alt="comm bank"/>
+                    <img src={commbank} className="thumbnail img-responsive" alt="Commonwealth Bank of Australia"/>
                 </div>
             </div>
         </section>
