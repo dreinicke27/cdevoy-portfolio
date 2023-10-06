@@ -13,7 +13,7 @@ const PillList = () => {
             key={pill.id}
             id={pill.id}
             name={pill.name}
-            link={pill.url}
+            url={pill.url}
             img={pill.img}
           />
         );

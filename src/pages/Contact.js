@@ -5,10 +5,11 @@ import instagram from "../assets/circle_buttons/instagram.svg";
 import whatsapp from "../assets/circle_buttons/whatsapp.svg";
 import PillList from "../components/pillList";
 import ContactPillLink from "../components/contactPillLink";
+import colevcard from "../assets/ColeDevoy.vcf";
 
 
 const Contact = () => {
-    const save = {"id":4, "name": "Save Info", "url": "", "img": "save"}
+    const save = {"id":4, "name": "Save Info", "url": colevcard, "img": "save"}
 
     return (
         <div className="dark">
@@ -33,8 +34,8 @@ const Contact = () => {
                     <div>
                         <PillList/>
                     </div>
-                    <hr className="divider py-3"/>
-                    <ContactPillLink key={save.id} id={save.id} name={save.name} link={save.url} img={save.img}/>
+                    <hr className="divider pt-3"/>
+                    <ContactPillLink key={save.id} id={save.id} name={save.name} url={save.url} img={save.img}/>
                     
                 
                 </div>
