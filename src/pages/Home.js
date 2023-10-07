@@ -11,6 +11,7 @@ import upCarrot from "../assets/upCarrot.svg";
 import "../Custom.scss";
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { HashLink } from 'react-router-hash-link'
 
 const INITIAL_FORM_DATA = {
     name: "",
@@ -99,7 +100,7 @@ const Home = () => {
                     <h1 className="display-sm-5 display-6 fw-bold text-light">Experience Design, Strategy, Innovation</h1>
                     <div className="gap-3 d-flex pt-md-5">
                         <button type="button" className="btn btn-light px-sm-4 rounded-lg" data-bs-toggle="modal" data-bs-target="#contactModal">LET'S WORK TOGETHER</button>
-                        <a href="#about"><button type="button" className="btn btn-outline-light px-sm-4 rounded-lg" data-bs-toggle="collapse" data-bs-target="#more" onClick={onAboutClick}>ABOUT ME</button></a>
+                        <HashLink to="#about"><button type="button" className="btn btn-outline-light px-sm-4 rounded-lg" data-bs-toggle="collapse" data-bs-target="#more" onClick={onAboutClick}>ABOUT ME</button></HashLink>
                     </div>
                 </div>
                 </div>
