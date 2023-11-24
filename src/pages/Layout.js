@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import linkedIn from "../assets/linkedin.svg";
 
@@ -16,6 +16,14 @@ const Layout = () => {
             data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon d-none"></span>
             </button>
+
+            <div className="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <NavLink to="projects" className= "text-light d-none" data-toggle="collapse" data-target="#navbarCollapse">Projects</NavLink>
+                </li>
+              </ul>
+            </div>
 
         </div>
         </nav>
