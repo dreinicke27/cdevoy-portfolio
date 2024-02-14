@@ -23,7 +23,7 @@ const ContactPillLink = (props) => {
     return (
         <div className="row py-3 justify-content-center">
             <div className="col-8 col-md-6 pill">
-                <a className ="cursor" href={props.url} target="_self" rel="noreferrer">
+                <a className ="cursor" href={props.url} target="_blank" rel="noreferrer">
                     <div className="row justify-content-start align-items-baseline">
                         <div className="col-md-3 col-3">
                             <img src={icon} alt={icon}/>
