@@ -21,13 +21,13 @@ const Contact = () => {
                     <div className="row justify-content-center"><div className="col-md-6 col-8 text-center">
                     <div className="row justify-content-evenly">
                         <div className="col">
-                            <a href="https://www.linkedin.com/in/coledevoy/" target="_blank" rel="noreferrer"><img src={linkedin} alt="LinkedIn"></img></a>
+                            <a className ="cursor" href="https://www.linkedin.com/in/coledevoy/" target="_blank" rel="noreferrer"><img src={linkedin} alt="LinkedIn"></img></a>
                         </div>
                         <div className="col">
-                            <a href="https://www.instagram.com/icholino/" target="_blank" rel="noreferrer"><img src={instagram} alt="Instagram"></img></a>
+                            <a className ="cursor" href="https://www.instagram.com/icholino/" target="_blank" rel="noreferrer"><img src={instagram} alt="Instagram"></img></a>
                         </div>
                         <div className="col">
-                            <a href="https://wa.me/12066194021" target="_blank" rel="noreferrer"><img src={whatsapp} alt="Whatsapp"></img></a>
+                            <a className ="cursor" href="https://wa.me/12066194021" target="_blank" rel="noreferrer"><img src={whatsapp} alt="Whatsapp"></img></a>
                         </div>
                     </div>
                     </div></div>
